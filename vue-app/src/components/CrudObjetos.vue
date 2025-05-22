@@ -10,12 +10,14 @@
     <p v-if="mensaje" style="color:green; text-align:center">{{ mensaje }}</p>
     <p v-if="error" style="color:red; text-align:center">{{ error }}</p>
     <table class="crud-table">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
+       <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
       <tbody>
         <tr v-for="obj in products" :key="obj.id">
           <td>{{ obj.nombre }}</td>
@@ -47,9 +49,12 @@ const editId = ref(null);
 const mensaje = ref("");
 const error = ref("");
 
+import { query, limit } from "firebase/firestore";
+
 const fetchObjetos = async () => {
   try {
-    const data = await getDocs(collection(db, "products"));
+    const productosQuery = query(collection(db, "products"), limit(3));
+    const data = await getDocs(productosQuery);
     products.value = data.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
