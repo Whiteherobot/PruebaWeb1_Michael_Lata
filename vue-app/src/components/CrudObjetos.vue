@@ -49,7 +49,7 @@ const error = ref("");
 
 const fetchObjetos = async () => {
   try {
-    const snapshot = await getDocs(collection(db, "objetos"));
+    const snapshot = await getDocs(collection(db, "products"));
     objetos.value = snapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
@@ -69,7 +69,7 @@ const handleAdd = async () => {
     return;
   }
   try {
-    await addDoc(collection(db, "objetos"), { nombre: nombre.value });
+    await addDoc(collection(db, "products"), { nombre: nombre.value });
     nombre.value = "";
     mensaje.value = "Objeto agregado.";
     fetchObjetos();
@@ -93,7 +93,7 @@ const handleUpdate = async () => {
     return;
   }
   try {
-    await updateDoc(doc(db, "objetos", editId.value), { nombre: nombre.value });
+    await updateDoc(doc(db, "products", editId.value), { nombre: nombre.value });
     editId.value = null;
     nombre.value = "";
     mensaje.value = "Objeto actualizado.";
@@ -108,7 +108,7 @@ const handleDelete = async (id) => {
   mensaje.value = "";
   error.value = "";
   try {
-    await deleteDoc(doc(db, "objetos", id));
+    await deleteDoc(doc(db, "products", id));
     mensaje.value = "Objeto borrado.";
     fetchObjetos();
   } catch (err) {

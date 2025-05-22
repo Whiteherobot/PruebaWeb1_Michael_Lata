@@ -8,7 +8,11 @@ const logged = ref(false);
 
 <template>
   <div>
-    <component :is="logged ? CrudObjetos : Login" @login="logged = true" />
+    <div class="app-container">
+      <main>
+        <crud-objetos />
+      </main>
+    </div>
   </div>
 </template>
 
