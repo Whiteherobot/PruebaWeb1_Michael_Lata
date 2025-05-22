@@ -17,7 +17,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="obj in objetos" :key="obj.id">
+        <tr v-for="obj in products" :key="obj.id">
           <td>{{ obj.nombre }}</td>
           <td>
             <button @click="handleEdit(obj)">Editar</button>
@@ -41,7 +41,7 @@ import {
   doc,
 } from "firebase/firestore";
 
-const objetos = ref([]);
+const products = ref([]);
 const nombre = ref("");
 const editId = ref(null);
 const mensaje = ref("");
@@ -49,8 +49,8 @@ const error = ref("");
 
 const fetchObjetos = async () => {
   try {
-    const snapshot = await getDocs(collection(db, "products"));
-    objetos.value = snapshot.docs.map((doc) => ({
+    const data = await getDocs(collection(db, "products"));
+    products.value = data.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
     }));
