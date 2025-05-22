@@ -1,0 +1,101 @@
+/* src/assets/main.css */
+body {
+  background: #f4f6fb;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.crud-container {
+  max-width: 420px;
+  margin: 48px auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+}
+
+.crud-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #2d3a4a;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.crud-container input {
+  width: 68%;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #d1d9e6;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f7f9fc;
+  transition: border 0.2s;
+}
+
+.crud-container input:focus {
+  border: 1.5px solid #4f8cff;
+  outline: none;
+  background: #fff;
+}
+
+.crud-container button {
+  padding: 9px 16px;
+  margin: 2px 2px;
+  border: none;
+  border-radius: 6px;
+  background: #4f8cff;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.06);
+}
+
+.crud-container button:hover {
+  background: #2563eb;
+}
+
+.crud-container button[style*="background:#bbb"] {
+  background: #e0e0e0 !important;
+  color: #222 !important;
+}
+
+.crud-container button[style*="background:#c62828"] {
+  background: #e53935 !important;
+}
+
+.crud-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 22px;
+  background: #fafbfc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.crud-table th, .crud-table td {
+  border: 1px solid #e3e8ee;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.crud-table th {
+  background: #eaf1fb;
+  color: #2d3a4a;
+  font-weight: 600;
+}
+
+.crud-table tr:nth-child(even) {
+  background: #f4f6fb;
+}
+
+p[style*="color:green"] {
+  color: #388e3c !important;
+  font-weight: 500;
+}
+
+p[style*="color:red"] {
+  color: #d32f2f !important;
+  font-weight: 500;
+}

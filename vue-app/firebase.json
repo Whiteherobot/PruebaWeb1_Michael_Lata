@@ -1,0 +1,16 @@
+{
+  "firestore": {
+    "database": "(default)",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "C:/Users/mlata/OneDrive/Escritorio/6to Ciclo/WEB/PruebaWeb1_Michael_Lata/vue-app/dist",
+    "site": "vue-app-1-6",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

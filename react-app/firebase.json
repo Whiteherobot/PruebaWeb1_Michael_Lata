@@ -1,0 +1,15 @@
+{
+  "firestore": {
+    "database": "(default)",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "C:/Users/mlata/OneDrive/Escritorio/6to Ciclo/WEB/PruebaWeb1_Michael_Lata/react-app/build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
